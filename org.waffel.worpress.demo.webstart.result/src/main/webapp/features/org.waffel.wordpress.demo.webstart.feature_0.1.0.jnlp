@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jnlp spec="1.0+" codebase="http://localhost:8080/demoui-webstart">
+	<information>
+		<title>Feature</title>
+		<vendor>waffel.org</vendor>
+		<offline-allowed/>
+	</information>
+	<security>
+		<all-permissions/>
+	</security>
+	<component-desc/>
+	<resources>
+		<j2se version="1.5+" />
+	</resources>
+	<resources>
+		<extension href="features/org.eclipse.rcp_3.7.0.v20110216-9DB5Fm1FpBGy_AaVz-mFamgY.jnlp" />
+		<jar href="plugins/org.waffel.wordpress.demo.webstart.plugin_0.1.0.jar"/>
+	</resources>
+</jnlp>

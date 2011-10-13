@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jnlp spec="1.0+" codebase="http://localhost:8080/demoui-webstart"  href="start.jnlp">
+  <information>
+    <!-- user readable name of the application -->
+    <title> Demo UI Application </title>
+    <!-- vendor name -->
+    <vendor>Waffel</vendor>
+    <!-- vendor homepage -->
+    <homepage href="http://waffel.org" />
+    <!-- product description -->
+    <description>description</description>
+    <offline-allowed/>
+  </information>
+
+  <!--request all permissions from the application. This does not change-->
+  <security>
+    <all-permissions/>
+  </security>
+
+  <!-- The name of the main class to execute. This does not change-->
+  <application-desc main-class="org.eclipse.equinox.launcher.WebStartMain">
+    <argument>-nosplash</argument>
+  </application-desc>
+
+  <resources>
+    <!-- Reference to the launcher jar. The version segment must be updated to the version being used-->
+    <jar href="plugins/org.eclipse.equinox.launcher_1.2.0.v20110502.jar"/>
+
+    <!-- Reference to all the plugins and features constituting the application -->
+    <!-- Here we are referring to the wrapper feature since it transitively refers to all the other plug-ins  necessary -->
+    <extension
+        name="Wrapper feature"
+        href="features/org.waffel.wordpress.demo.webstart.wrapperfeature_0.1.0.jnlp"/>
+
+    <!-- Information usually specified in the config.ini -->
+    <property
+        name="osgi.instance.area"
+        value="@user.home/Application Data/demoui-rcp"/>
+    <property
+        name="osgi.configuration.area"
+        value="@user.home/Application Data/demoui-rcp"/>
+    <!-- The id of the product to run, like found in the overview page of the product editor -->
+    <property
+        name="eclipse.application"
+        value="org.waffel.wordpress.demo.webstart.plugin.application"/>
+  </resources>
+
+  <!-- Indicate on a platform basis which JRE to use -->
+  <resources os="Windows">
+    <j2se version="1.5+"/>
+  </resources>
+  <resources os="Linux">
+    <j2se version="1.5+"/>
+  </resources>
+</jnlp>
